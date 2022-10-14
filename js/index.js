@@ -24,7 +24,9 @@ const asyncTest = async () => {
   const res = await fetch("https://api.quotable.io/random")
     .then((response) => response.json())
     .catch((err) => console.log(err));
+
   randomColor();
+
   quote.textContent = `"${res.content}"`;
   quoteAuthor.textContent = `- ${res.author}`;
 };
