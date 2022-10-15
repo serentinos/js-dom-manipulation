@@ -20,15 +20,19 @@ const randomColor = () => {
   container.style.backgroundColor = randomHexadecimalArr.join("");
 };
 
-const asyncTest = async () => {
-  const res = await fetch("https://api.quotable.io/random")
-    .then((response) => response.json())
-    .catch((err) => console.log(err));
-
-  randomColor();
-
-  quote.textContent = `"${res.content}"`;
-  quoteAuthor.textContent = `- ${res.author}`;
+const getData = async () => {
+  try {
+    const res = await (await fetch("https://api.quotable.io/random")).json();
+    return res;
+  } catch (error) {
+    console.log(error);
+  }
 };
-asyncTest();
-quoteNew.addEventListener("click", asyncTest);
+
+const newQuote = async () => {
+  const quoteContent = await getData();
+  quote.textContent = `"${quoteContent.content}"`;
+  quoteAuthor.textContent = `- ${quoteContent.author}`;
+  randomColor();
+};
+quoteNew.addEventListener("click", newQuote);
