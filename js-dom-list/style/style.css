@@ -9,4 +9,132 @@
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #657786;
+}
+strong {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.bottom-line {
+  border-bottom: 1px solid var(--extra-light-gray);
+}
+.hover-underline:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.post-box {
+  background-color: var(--white);
+  width: 100%;
+  padding: 15px;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 24px;
+}
+
+.icon-cnt {
+  display: flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  transition: ease-in-out 0.1s;
+}
+
+.icon {
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  width: 24px;
+  height: 24px;
+
+  transition: ease-in-out 0.1s;
+}
+
+.icon-cnt:hover {
+  cursor: pointer;
+  background-color: var(--extra-light-gray);
+}
+.icon-cnt:hover .icon {
+  stroke: #1da1f2;
+}
+
+.post-header-title {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+/* Post Author */
+.post-author {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+.post-author-about {
+  display: flex;
+  gap: 10px;
+}
+.post-author-about-initials {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+}
+.avatar:hover {
+  cursor: pointer;
+}
+.author-name {
+  font-weight: 700;
+  font-size: 15px;
+}
+.author-username {
+  font-size: 15px;
+  color: var(--dark-gray);
+}
+
+/* post content */
+
+.post-content {
+  display: inline-block;
+  font-size: 23px;
+}
+/* Post Details */
+.post-details {
+  display: flex;
+  padding: 16px 0;
+  color: var(--dark-gray);
+  font-size: 15px;
+}
+/* Post Reposts */
+.post-reposts {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: var(--dark-gray);
+
+  padding: 16px 4px;
+}
+
+.post-action {
+  display: flex;
+  height: 48px;
+  justify-content: space-around;
+  align-items: center;
 }
