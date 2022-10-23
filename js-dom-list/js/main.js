@@ -3,19 +3,42 @@ import { data } from "./data.js";
 const tweetsList = document.querySelector(".tweets-list");
 
 const getPostDate = (postDate) => {
-  return new Date(postDate);
+  const month = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const date = new Date(postDate);
+  return `${date.getDate()} ${month[date.getMonth()]}. ${date.getFullYear()}`;
 };
 
 const generateList = (data) => {
   data.forEach((item) => {
     let newElement = document.createElement("li");
-
     newElement.classList.add("tweets-list-item");
-
     newElement.innerHTML = `<button class="list-btn" data-itemid="${item.id}">${item.author}</button>`;
-
     tweetsList.appendChild(newElement);
   });
+};
+
+generateList(data);
+const allNavButtons = document.querySelectorAll(".list-btn");
+
+const clearButtonSelect = () => {
+  allNavButtons.forEach((item) => item.classList.remove("active-btn"));
+};
+
+const setButtonSelect = (button) => {
+  button.classList.add("active-btn");
 };
 
 const generateTweet = (post) => {
@@ -83,13 +106,11 @@ const generateTweet = (post) => {
 
 const getPostItem = (event) => {
   if (event.target.className != "list-btn") return;
-
+  clearButtonSelect();
   const button = event.target;
   const tweetData = data.find(({ id }) => id === Number(button.dataset.itemid));
-
+  setButtonSelect(button);
   generateTweet(tweetData);
 };
-
-generateList(data);
 
 tweetsList.addEventListener("click", getPostItem);

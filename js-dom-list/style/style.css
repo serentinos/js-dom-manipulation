@@ -2,6 +2,7 @@
 }
 :root {
   --blue: #1da1f2;
+  --blue-hover: #1991dc;
   --black: #14171a;
   --dark-gray: #657786;
   --light-gray: #e1e8ed;
@@ -49,6 +50,12 @@ strong {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
+}
+
+.tweets-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .list-btn {
@@ -174,6 +181,9 @@ strong {
 .active-btn {
   background-color: var(--blue);
   color: var(--white);
+}
+.active-btn:hover {
+  background-color: var(--blue-hover);
 }
 
 @media (max-width: 475px) {
