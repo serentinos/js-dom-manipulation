@@ -1,15 +1,17 @@
+*:focus {
+}
 :root {
   --blue: #1da1f2;
   --black: #14171a;
   --dark-gray: #657786;
-  --light-gray: #aab8c2;
+  --light-gray: #e1e8ed;
   --extra-light-gray: #e1e8ed;
   --white: #ffffff;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #657786;
+  background-color: --white;
 }
 strong {
   color: var(--black);
@@ -19,19 +21,49 @@ strong {
 .bottom-line {
   border-bottom: 1px solid var(--extra-light-gray);
 }
+.box-front-lines {
+  border-left: 1px solid var(--extra-light-gray);
+  border-right: 1px solid var(--extra-light-gray);
+}
 .hover-underline:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+.wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  padding: 10px;
+}
 
 .container {
-  max-width: 700px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .post-box {
   background-color: var(--white);
   width: 100%;
   padding: 15px;
+}
+.list-box {
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+}
+
+.list-btn {
+  display: inline-block;
+  font-size: 20px;
+  padding: 10px 12px;
+
+  color: var(--black);
+  border-radius: 40px;
+  transition: ease-in-out 0.2s;
+}
+
+.list-btn:hover {
+  background-color: var(--light-gray);
+  cursor: pointer;
 }
 
 .post-header {
@@ -138,3 +170,24 @@ strong {
   justify-content: space-around;
   align-items: center;
 }
+
+.active-btn {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+@media (max-width: 475px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .post-box {
+    padding: 0;
+  }
+  .box-front-lines {
+    border: none;
+  }
+  .list-btn {
+    width: 100%;
+    text-align: center;
+  }
+} ;
