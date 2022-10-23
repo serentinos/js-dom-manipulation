@@ -50,6 +50,8 @@ strong {
   background-color: var(--white);
   display: flex;
   flex-direction: column;
+
+  transition: ease-in-out 0.2s;
 }
 
 .tweets-list {
@@ -91,7 +93,9 @@ strong {
 
   transition: ease-in-out 0.1s;
 }
-
+.list-nav-btn {
+  display: none;
+}
 .icon {
   /* display: flex;
   align-items: center;
@@ -189,6 +193,7 @@ strong {
 @media (max-width: 475px) {
   .wrapper {
     grid-template-columns: 1fr;
+    position: relative;
   }
   .post-box {
     padding: 0;
@@ -199,5 +204,21 @@ strong {
   .list-btn {
     width: 100%;
     text-align: center;
+  }
+  .list-box {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    padding: 5px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .list-box-show {
+    display: flex;
+  }
+  .list-nav-btn {
+    display: flex;
   }
 } ;

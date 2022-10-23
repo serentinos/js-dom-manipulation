@@ -1,8 +1,17 @@
 import { data } from "./data.js";
 // В мобільній версії варто винести список твітів в окремий бургер
+// В мобільній версії меню виникає при нажиманні на стрілочку, закривається при виборі елемента
 // В привітання потрібно буде сказати, що користувач може перейти до інших твітів нажаттям на стрілочку
 // На фіналі відрефакторити код, щоб виглядав більш адекватно
 const tweetsList = document.querySelector(".tweets-list");
+const listNavButton = document.querySelector(".list-nav-btn");
+const listBox = document.querySelector(".list-box");
+
+const mobileListMenuToggle = () => {
+  listBox.classList.contains("list-box-show")
+    ? listBox.classList.remove("list-box-show")
+    : listBox.classList.add("list-box-show");
+};
 
 const getPostDate = (postDate) => {
   const month = [
@@ -111,8 +120,10 @@ const getPostItem = (event) => {
   clearButtonSelect();
   const button = event.target;
   const tweetData = data.find(({ id }) => id === Number(button.dataset.itemid));
+  mobileListMenuToggle();
   setButtonSelect(button);
   generateTweet(tweetData);
 };
 
 tweetsList.addEventListener("click", getPostItem);
+listNavButton.addEventListener("click", mobileListMenuToggle);
