@@ -4,9 +4,7 @@ const listNavButton = document.querySelector(".list-nav-btn");
 const listBox = document.querySelector(".list-box");
 
 const mobileListMenuToggle = () => {
-  listBox.classList.contains("list-box-show")
-    ? listBox.classList.remove("list-box-show")
-    : listBox.classList.add("list-box-show");
+  listBox.classList.toggle("list-box-show");
 };
 
 const getPostDate = (postDate) => {
