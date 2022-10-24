@@ -4,12 +4,13 @@ export const data = [
     authorAvatar: "./img/avatars/linakostenko.jpg",
     author: "Ліна Костенко",
     username: "linakostenko",
-    content: "Test",
+    content:
+      "Чужа душа — то, кажуть, темний ліс.<br> А я кажу: не кожна, ой не кожна! <br> Чужа душа — то тихе море сліз. <br> Плювати в неї — гріх тяжкий, не можна.",
     date: "12/04/1978",
     contentImg: "",
-    likes: 23,
-    retweets: 69,
-    comments: 12,
+    likes: 422,
+    retweets: 512,
+    comments: 89,
   },
   {
     id: 2,
