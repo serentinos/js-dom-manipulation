@@ -2,6 +2,8 @@
   background-color: var(--light-gray);
 }
 :root {
+  --main-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
   --blue: #1da1f2;
   --blue-hover: #1991dc;
   --black: #14171a;
@@ -12,7 +14,7 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--main-font);
   background-color: --white;
 }
 strong {
@@ -85,8 +87,9 @@ strong {
 
 .icon-cnt {
   display: flex;
-  width: 34px;
-  height: 34px;
+  padding: 5px;
+  /* width: 34px;
+  height: 34px; */
   align-items: center;
   justify-content: center;
 
